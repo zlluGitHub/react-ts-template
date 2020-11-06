@@ -3,16 +3,17 @@ import { Link, NavLink, Switch, useHistory, useLocation, Redirect, useRouteMatch
 import { Layout, Menu } from 'antd';
 import "./style.scss"
 // import { RouterView } from '../../routes/RouterView'
-import RouterView from '../../routes/RouterView'
+import RouterView from "../../routes/RouterView"
 // import RouterView from '../../routes_copy/RouterView'
 // import routerConfig from '../../routes/index'
-import {
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-} from '@ant-design/icons';
+// import A from '@/views/pageA'
+// import {
+//     MenuUnfoldOutlined,
+//     MenuFoldOutlined,
+//     UserOutlined,
+//     VideoCameraOutlined,
+//     UploadOutlined,
+// } from '@ant-design/icons';
 
 // import './index.scss';
 const { Header, Sider, Content } = Layout;

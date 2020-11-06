@@ -2,8 +2,8 @@ import React from 'react';
 // import { request } from '../utils/request';
 import RouterView from '../routes/RouterView'
 // import RouterView from '../routes_copy/RouterView'
-import Send from "../components/Sider/send"
-import Receive from "../components/Sider/receive"
+// import Send from "../components/Sider/send"
+// import Receive from "../components/Sider/receive"
 interface IHelloProps {
     routes: any[];
 }
