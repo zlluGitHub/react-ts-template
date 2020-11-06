@@ -1,0 +1,44 @@
+.zk-menu-warp {
+    li {
+        color: $font-color;
+        cursor: pointer;
+        padding: 15px 0;
+        text-align: center;
+        position: relative;
+        font-size: $font-size;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 28%;
+            height: 1.5px;
+            width: 40%;
+            background: #15172367;
+        }
+        &.active {
+            background: $menu-active-background-color;
+            position: relative;
+            &::after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: -100%;
+                left: 0;
+                height: 300%;
+                width: 3px;
+                background: linear-gradient(to top, #ff866117 0%, #ff845c 50%, #ff866117 100%);
+            }
+            &::before {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 3px;
+                background: #ff8661;
+            }
+        }
+    }
+}

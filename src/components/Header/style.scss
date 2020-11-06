@@ -1,0 +1,11 @@
+ul.zk-header{
+    display: flex;
+   justify-content: flex-end;
+   li{
+       margin-left: 30px;
+       font-size: $font-size;
+       span{
+           color: $header-high-font-color;
+       }
+   }
+}

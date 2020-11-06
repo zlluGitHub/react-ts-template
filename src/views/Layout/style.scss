@@ -1,0 +1,22 @@
+body {
+  min-height: 100vh;
+  .zk-layout {
+    background: $body-background-color;
+    .zk-header {
+      background: $body-background-color;
+      color: $font-color;
+      height: initial;
+      line-height: initial;
+      padding: $header-padding;
+    }
+    .zk-content {
+      border-radius: 8px;
+    }
+  }
+  .zk-right-sider {
+    background: $body-background-color;
+  }
+  .zk-content {
+    background: $content-background-color;
+  }
+}

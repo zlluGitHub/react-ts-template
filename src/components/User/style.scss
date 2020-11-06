@@ -1,0 +1,11 @@
+.zk-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $font-size;
+    color: $font-color;
+    margin-bottom: 20px;
+    .zk-usr-icon{
+        margin-top: 150px;
+    }
+}

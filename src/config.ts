@@ -16,17 +16,22 @@ export const menuConfig: Array<ImenuConfig> = [
         icon: "动态",
     },
     {
-        title: "推荐",
+        title: "智库",
+        path: "",
+        icon: "动态",
+    },
+    {
+        title: "动态",
+        path: "智库",
+        icon: "",
+    },
+    {
+        title: "项目",
         path: "智库",
         icon: "动态",
     },
     {
-        title: "推荐",
-        path: "智库",
-        icon: "动态",
-    },
-    {
-        title: "推荐",
+        title: "报告",
         path: "智库",
         icon: "动态",
     },

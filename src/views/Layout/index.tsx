@@ -1,9 +1,12 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { Link, NavLink, Switch, useHistory, useLocation, Redirect, useRouteMatch, useParams } from 'react-router-dom'
-import { Layout, Menu } from 'antd';
+import { Layout } from 'antd';
 import "./style.scss"
 // import { RouterView } from '../../routes/RouterView'
 import RouterView from "../../routes/RouterView"
+import Menu from "../../components/Menu"
+import User from "../../components/User"
+import Headers from "../../components/Header"
 // import RouterView from '../../routes_copy/RouterView'
 // import routerConfig from '../../routes/index'
 // import A from '@/views/pageA'
@@ -16,7 +19,7 @@ import RouterView from "../../routes/RouterView"
 // } from '@ant-design/icons';
 
 // import './index.scss';
-const { Header, Sider, Content } = Layout;
+const { Header,Sider, Content } = Layout;
 // const { routers } = routerConfig;
 interface IMenuType {
     key: string | number;
@@ -68,14 +71,15 @@ const LayoutContent: React.FC<IPropsType> = (props) => {
             </Sider>
             <Layout className="zk-layout">
                 <Header className="zk-header">
-                    header
+                   <Headers/>
                 </Header>
                 <Content className="zk-content">
                     <RouterView routes={routes} />
                 </Content>
             </Layout>
-            <Sider trigger={null} collapsible collapsed={collapsed} width="100" className="zk-right-sider">
-                侧栏
+            <Sider trigger={null} collapsible collapsed={collapsed} width="70" className="zk-right-sider">
+                <User/>
+               <Menu/>
             </Sider>
         </Layout>
     )

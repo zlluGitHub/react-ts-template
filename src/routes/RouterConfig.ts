@@ -1,7 +1,7 @@
 
 import loadable from '../utils/loadable';//懒加载
 
-const Layout = loadable(() => import('../components/Layout'));
+const Layout = loadable(() => import('../views/Layout'));
 const Apage = loadable(() => import('../views/Apage'));
 const Bpage = loadable(() => import('../views/Bpage'));
 // const Cpage = loadable(() => import('../pages/Cpage'));

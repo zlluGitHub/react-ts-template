@@ -3,6 +3,7 @@ const {
   fixBabelImports,
   addLessLoader,
   addWebpackAlias,
+  adjustStyleLoaders
 } = require("customize-cra");
 const path = require("path");
 function resolve(dir) {
@@ -29,11 +30,22 @@ module.exports = override(
     style: true, // 自动打包相关的样式
   }),
 
-  // 使用less-loader对源码中的less的变量进行重新指定
+  // // 使用less-loader对源码中的less的变量进行重新指定
   // addLessLoader({
   //   javascriptEnabled: true,
   //   modifyVars: { "@primary-color": "#1DA57A" },
   // }),
+
+  adjustStyleLoaders(rule => {
+    if (rule.test.toString().includes("scss")) {
+      rule.use.push({
+        loader: require.resolve("sass-resources-loader"),
+        options: {
+          resources: "./src/style/_style.scss" //这里是你自己放公共scss变量的路径
+        }
+      });
+    }
+  }),
 
   // 配置路径别名
   addWebpackAlias({
