@@ -1,10 +1,10 @@
 
 import loadable from '../utils/loadable';//懒加载
 
-const Apage = loadable(() => import('../pages/Apage'));
 const Layout = loadable(() => import('../components/Layout'));
-const Bpage = loadable(() => import('../pages/Bpage'));
-const Cpage = loadable(() => import('../pages/Cpage'));
+const Apage = loadable(() => import('../views/Apage'));
+const Bpage = loadable(() => import('../views/Bpage'));
+// const Cpage = loadable(() => import('../pages/Cpage'));
 const Error = loadable(() => import('../pages/Error'));
 const Login = loadable(() => import('../pages/Login'));
 
@@ -28,34 +28,29 @@ export const routerConfig: IConfigType = {
     basename: '',
     routes: [
         {
-            path: "/404",
-            name: "404页面",
-            component: Error,
-        },
-        {
             path: "/login",
             name: "登录页面",
             component: Login
         },
         {
-            path: "/i",
+            path: "/",
             name: "a页面",
             component: Layout,
             // auth: true, //需要登陆后才能跳转的页面
             children: [
                 {
-                    path: "/i/404",
+                    path: "/404",
                     name: "404页面",
                     component: Error,
                 },
                 {
-                    path: "/i/a",
+                    path: "/",
                     name: "aa页面",
                     component: Apage
 
                 },
                 {
-                    path: "/i/b",
+                    path: "/b",
                     name: "a页面",
                     component: Bpage
                 },
@@ -85,11 +80,11 @@ export const routerConfig: IConfigType = {
             ]
         },
 
-        {
-            path: "/c/:id/:name",
-            name: "a页面",
-            component: Cpage
-        }
+        // {
+        //     path: "/c/:id/:name",
+        //     name: "a页面",
+        //     component: Cpage
+        // }
 
     ]
 

@@ -20,9 +20,9 @@ export const RouterView: React.FC<IPropsType> = (props) => {
             })
         }
         recursivePath(routerConfig.routes)
-        const RenderRoute: Element[] | any = routes.map((route: IRoutesType) => {
+        const RenderRoute: Element[] | any = routes.map((route: IRoutesType,i:number) => {
             return (
-                <Route exact={exact} path={route.path} render={(props) => {
+                <Route key={i} exact={exact} path={route.path} render={(props) => {
                     if (routePathArr.indexOf(props.location.pathname) <= -1) {
                         return <Redirect exact={exact} from="/*" to="/404" />
                     }

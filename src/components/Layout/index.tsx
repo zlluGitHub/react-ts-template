@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react'
-import { Link, NavLink, Switch, useHistory, useLocation,Redirect, useRouteMatch, useParams } from 'react-router-dom'
+import { Link, NavLink, Switch, useHistory, useLocation, Redirect, useRouteMatch, useParams } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
+import "./style.scss"
 // import { RouterView } from '../../routes/RouterView'
 import RouterView from '../../routes/RouterView'
 // import RouterView from '../../routes_copy/RouterView'
@@ -35,7 +36,7 @@ export let MenuContext: any
 
 
 const LayoutContent: React.FC<IPropsType> = (props) => {
-    console.log(props,'ssssssssssss')
+    console.log(props, 'ssssssssssss')
     const { routes } = props;
 
     const [select, setSelect] = useState('等待子组件传值...');
@@ -47,11 +48,7 @@ const LayoutContent: React.FC<IPropsType> = (props) => {
 
     MenuContext = createContext<IContextType>({ index: '0', onSelect: onSelect })
 
-
-
-
-
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(false);
     // useEffect(() => {
     //     document.title = `点击了${like}次`
     // })
@@ -64,45 +61,21 @@ const LayoutContent: React.FC<IPropsType> = (props) => {
         // props.history.push(`/home`);
     }
     return (
-        <Layout>
-            <Sider trigger={null} collapsible collapsed={collapsed}>
-                <div className="logo" >  </div>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick={handleClick}>
-                    <Menu.Item key="/i/a" icon={<UserOutlined />}>
-                        nav 1
-                    </Menu.Item>
-                    <Menu.Item key="/i/b" icon={<VideoCameraOutlined />}>
-                        nav 2
-                    </Menu.Item>
-                    <Menu.Item key="/login" icon={<UploadOutlined />}>
-                        nav 3
-                    </Menu.Item>
-                </Menu>
+        <Layout style={{ minHeight: "100vh" }}>
+            <Sider trigger={null} collapsible collapsed={collapsed} width="350" className="zk-right-sider">
+                侧栏
             </Sider>
-            <Layout className="site-layout">
-                <Header className="site-layout-background" style={{ padding: 0 }}>
-                    {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                        className: 'trigger',
-                        onClick: toggle,
-                    })}
+            <Layout className="zk-layout">
+                <Header className="zk-header">
+                    header
                 </Header>
-                <Content
-                    className="site-layout-background"
-                    style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        minHeight: 280,
-                    }}
-                >
-                    <div>{select}</div>
-                    <Link to="/">pageA</Link>
-                    <NavLink to="/b/sa/s">pageB</NavLink>
-                    <NavLink to="/c" activeClassName='active'>pageC</NavLink>
-                    <span>我是内容首页</span>
-                    <RouterView routes={routes}/>
-                    {/* {RouterView(routes)} */}
+                <Content className="zk-content">
+                    <RouterView routes={routes} />
                 </Content>
             </Layout>
+            <Sider trigger={null} collapsible collapsed={collapsed} width="100" className="zk-right-sider">
+                侧栏
+            </Sider>
         </Layout>
     )
 }
