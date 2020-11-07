@@ -3,6 +3,7 @@ import { Link, NavLink, Switch, useHistory, useLocation, Redirect, useRouteMatch
 import { Layout } from 'antd';
 import "./style.scss"
 // import { RouterView } from '../../routes/RouterView'
+import { menuConfig } from "../../config"
 import RouterView from "../../routes/RouterView"
 import Menu from "../../components/Menu"
 import User from "../../components/User"
@@ -19,7 +20,7 @@ import Headers from "../../components/Header"
 // } from '@ant-design/icons';
 
 // import './index.scss';
-const { Header,Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 // const { routers } = routerConfig;
 interface IMenuType {
     key: string | number;
@@ -71,15 +72,15 @@ const LayoutContent: React.FC<IPropsType> = (props) => {
             </Sider>
             <Layout className="zk-layout">
                 <Header className="zk-header">
-                   <Headers/>
+                    <Headers />
                 </Header>
                 <Content className="zk-content">
                     <RouterView routes={routes} />
                 </Content>
             </Layout>
             <Sider trigger={null} collapsible collapsed={collapsed} width="70" className="zk-right-sider">
-                <User/>
-               <Menu/>
+                <User  />
+                <Menu menuConfig={menuConfig}/>
             </Sider>
         </Layout>
     )
